@@ -1,14 +1,14 @@
 # DataJoint Element - Array Electrophysiology Element
-DataJoint Element for array electrophysiology.
+DataJoint Element for array electrophysiology, nwb export branch.
 
-This repository features DataJoint pipeline design for extracellular array electrophysiology, 
-with ***Neuropixels*** probe and ***kilosort*** spike sorting method. 
+This repository features DataJoint pipeline design for extracellular array electrophysiology,
+with ***Neuropixels*** probe and ***kilosort*** spike sorting method.
 
-The pipeline presented here is not a complete pipeline by itself, but rather a modular 
-design of tables and dependencies specific to the extracellular electrophysiology workflow. 
+The pipeline presented here is not a complete pipeline by itself, but rather a modular
+design of tables and dependencies specific to the extracellular electrophysiology workflow.
 
-This modular pipeline element can be flexibly attached downstream 
-to any particular design of experiment session, thus assembling a fully functional 
+This modular pipeline element can be flexibly attached downstream
+to any particular design of experiment session, thus assembling a fully functional
 ephys pipeline.
 
 See [Background](Background.md) for the background information and development timeline.
@@ -17,7 +17,7 @@ See [Background](Background.md) for the background information and development t
 
 ![element-array-ephys diagram](images/attached_array_ephys_element.svg)
 
-As the diagram depicts, the array ephys element starts immediately downstream from ***Session***, 
+As the diagram depicts, the array ephys element starts immediately downstream from ***Session***,
 and also requires some notion of ***Location*** as a dependency for ***InsertionLocation***.
 
 ### The design of probe
@@ -33,10 +33,10 @@ and also requires some notion of ***Location*** as a dependency for ***Insertion
 
 + ***ProbeInsertion*** - a surgical insertion of a probe in the brain. Every experimental session consists of one or more entries in ***ProbeInsertion*** with a corresponding ***InsertionLocation*** each
 + ***EphysRecording*** - each ***ProbeInsertion*** is accompanied by a corresponding ***EphysRecording***, specifying the ***ElectrodeConfig*** used for the recording from the ***Probe*** defined in such ***ProbeInsertion***
-    
+
 ### Clusters and spikes
 
-This ephys element features automatic ingestion for spike sorting results from the ***kilosort*** method. 
+This ephys element features automatic ingestion for spike sorting results from the ***kilosort*** method.
 
 + ***Clustering*** - specify instance(s) of clustering on an ***EphysRecording***, by some ***ClusteringMethod***
 + ***Curation*** - specify instance(s) of curations performed on the output of a given ***Clustering***
